@@ -37,7 +37,7 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand href="/">
               <img src={logo} alt="ProShop" />
-              ProShop
+              vStore
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
