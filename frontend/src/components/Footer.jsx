@@ -1,14 +1,61 @@
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import "../assets/styles/footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer className="footer">
       <Container>
+        {/* Logo and About Us */}
+        <Row>
+          <Col md={4} className="text-center mb-4">
+            <Image
+              src="https://via.placeholder.com/150" // Placeholder logo URL
+              alt="vStore Logo"
+              fluid
+              className="footer-logo"
+            />
+            <p className="mt-3">vStore - Your one-stop shop for the best products.</p>
+          </Col>
+
+          {/* Customer Service Links */}
+          <Col md={4} className="mb-4">
+            <h5>Customer Service</h5>
+            <ul className="footer-links">
+              <li><a href="/contact-us">Contact Us</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/returns">Returns & Refunds</a></li>
+              <li><a href="/shipping-info">Shipping Information</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+            </ul>
+          </Col>
+
+          {/* Social Media Links */}
+          <Col md={4} className="mb-4 text-center">
+            <h5>Follow Us</h5>
+            <div className="social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <Image src="https://via.placeholder.com/32" alt="Facebook" fluid />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <Image src="https://via.placeholder.com/32" alt="Twitter" fluid />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <Image src="https://via.placeholder.com/32" alt="Instagram" fluid />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Image src="https://via.placeholder.com/32" alt="LinkedIn" fluid />
+              </a>
+            </div>
+          </Col>
+        </Row>
+
+        {/* Copyright */}
         <Row>
           <Col className="text-center py-3">
-            <p>vStore &copy; {currentYear}</p>
+            <p>&copy; {currentYear} vStore. All rights reserved.</p>
           </Col>
         </Row>
       </Container>
@@ -17,3 +64,4 @@ const Footer = () => {
 };
 
 export default Footer;
+ 

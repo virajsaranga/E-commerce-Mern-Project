@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container, Badge, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
-import logo from "../assets/logo.png";
+import logo1 from "../assets/logo1.png";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../slices/userApiSlice";
@@ -36,8 +36,8 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand href="/">
-              <img src={logo} alt="ProShop" />
-              ProShop
+              <img src={logo1} alt="ProShop" />
+             
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
