@@ -6,7 +6,7 @@
  */
 :root,
 [data-bs-theme='light'] {
-  --bs-blue: #3c4c5d;
+  --bs-blue: #368ae4;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -29,15 +29,15 @@
   --bs-gray-700: #7b8a8b;
   --bs-gray-800: #7b8a8b;
   --bs-gray-900: #7b8a8b;
-  --bs-primary: #3c4c5d;
-  --bs-secondary: #7b8a8b;
+  --bs-primary: #3f79b8;
+  --bs-secondary: #5fdfe8;
   --bs-success: #18bc9c;
   --bs-info: #3498db;
   --bs-warning: #f39c12;
   --bs-danger: #e74c3c;
   --bs-light: #f4f4f4;
-  --bs-dark: #7b8a8b;
-  --bs-primary-rgb: 60, 76, 93;
+  --bs-dark: #09d7e5;
+  --bs-primary-rgb:236, 162, 35 ;
   --bs-secondary-rgb: 123, 138, 139;
   --bs-success-rgb: 24, 188, 156;
   --bs-info-rgb: 52, 152, 219;
@@ -134,7 +134,7 @@
 }
 
 [data-bs-theme='dark'] {
-  --bs-body-color: #7b8a8b;
+  --bs-body-color: #51edf9;
   --bs-body-color-rgb: 123, 138, 139;
   --bs-body-bg: #7b8a8b;
   --bs-body-bg-rgb: 123, 138, 139;
@@ -432,9 +432,11 @@ figure {
   margin: 0 0 1rem;
 }
 
-img,
-svg {
-  vertical-align: middle;
+img.logo, 
+svg.logo {
+  width: 150px; /* Adjust to your desired width */
+  height: auto; /* Keeps aspect ratio */
+  max-height: 80px; /* Set maximum height to fit the header */
 }
 
 table {
@@ -4055,6 +4057,18 @@ fieldset:disabled .btn {
   align-items: center;
   justify-content: space-between;
 }
+/* .navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+  width: 1px; 
+  height: auto;
+} */
+
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
@@ -4064,6 +4078,15 @@ fieldset:disabled .btn {
   text-decoration: none;
   white-space: nowrap;
 }
+
+.logo-img {
+  width: 50px; /* Adjust this width to make it smaller */
+  height: 2%; /* Keeps aspect ratio */
+  max-height: 50px; /* Limits maximum height */
+  vertical-align: middle; /* Aligns with navbar items */
+}
+
+
 .navbar-brand:hover,
 .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
