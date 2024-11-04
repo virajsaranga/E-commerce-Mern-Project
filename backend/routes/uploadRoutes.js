@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     );
   },
 });
-
+ 
 function fileFilter(req, file, cb) {
   const filetypes = /jpe?g|png|webp/;
   const mimetypes = /image\/jpe?g|image\/png|image\/webp/;
@@ -38,11 +38,12 @@ router.post("/", (req, res) => {
       return res.status(400).send({ message: err.message });
     }
 
-    res.status(200).send({
+    res.status(200).send({   
       message: "Image uploaded successfully",
       image: `/${req.file.path}`,
-    });
-  });
+    }); 
+  }); 
 });
 
 export default router;
+ 
