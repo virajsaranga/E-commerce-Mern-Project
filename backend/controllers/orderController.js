@@ -120,7 +120,7 @@ const getOrders = asyncHandler(async (req, res) => {
 export {
   addOrderItems,
   getMyOrders,
-  getOrderById,
+  getOrderById, 
   updateOrderToPaid,
   updateOrderToDelivered,
   getOrders,

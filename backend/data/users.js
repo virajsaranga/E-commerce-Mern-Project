@@ -19,6 +19,13 @@ const users = [
     password: bcrypt.hashSync("123456", 10),
     isAdmin: false,
   },
+  {
+    name: "New Admin User", // Add new admin details here
+    email: "newadmin@email.com",
+    password: bcrypt.hashSync("123456", 10),
+    isAdmin: true,
+  },
 ];
 
 export default users;
+  
