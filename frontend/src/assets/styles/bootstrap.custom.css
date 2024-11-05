@@ -195,6 +195,75 @@
   }
 }
 
+
+
+/* add external css */
+
+/* Set a fixed height for the product card and image */
+.product-card {
+  height: 400px; /* Adjust to your preferred height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-image {
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Crop the image to fit the area */
+  width: 100%; /* Full width for responsiveness */
+}
+
+.product-title {
+  min-height: 50px; /* Adjust based on the font size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* trending cart */
+/* Carousel container */
+.product-carousel {
+  max-width: 100%; /* Ensures full-width display */
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+/* Carousel images */
+.product-carousel img {
+  height: 400px; /* Matches the carousel height */
+  object-fit: cover; /* Crops images to fill the area */
+  width: 100%; /* Makes images responsive */
+}
+
+/* Center the caption text and apply custom styles */
+.carousel-caption h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+/* Zoom effect on active carousel items */
+.carousel-item.active img {
+  animation: zoomIn 2s ease-in-out;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

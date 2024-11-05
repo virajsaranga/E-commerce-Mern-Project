@@ -2,6 +2,13 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "../assets/styles/footer.css";
 
+// Import images
+import logo from "../assets/images/logo.png"; // Update with your logo file name
+import facebookIcon from "../assets/images/facebook-icon.png"; // Social media icons
+import twitterIcon from "../assets/images/twitter-icon.png";
+import instagramIcon from "../assets/images/instagram-icon.png";
+import linkedinIcon from "../assets/images/linkedin-icon.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -12,7 +19,7 @@ const Footer = () => {
         <Row>
           <Col md={4} className="text-center mb-4">
             <Image
-              src="https://via.placeholder.com/150" // Placeholder logo URL
+              src={logo}
               alt="vStore Logo"
               fluid
               className="footer-logo"
@@ -37,16 +44,16 @@ const Footer = () => {
             <h5>Follow Us</h5>
             <div className="social-icons">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <Image src="https://via.placeholder.com/32" alt="Facebook" fluid />
+                <Image src={facebookIcon} alt="Facebook" fluid />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Image src="https://via.placeholder.com/32" alt="Twitter" fluid />
+                <Image src={twitterIcon} alt="Twitter" fluid />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <Image src="https://via.placeholder.com/32" alt="Instagram" fluid />
+                <Image src={instagramIcon} alt="Instagram" fluid />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Image src="https://via.placeholder.com/32" alt="LinkedIn" fluid />
+                <Image src={linkedinIcon} alt="LinkedIn" fluid />
               </a>
             </div>
           </Col>
@@ -64,4 +71,3 @@ const Footer = () => {
 };
 
 export default Footer;
- 
