@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,28 +14,45 @@ const LoginScreen = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [login, { isLoading }] = useLoginMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
+  // Get the redirect path from URL or set to home page by default
+  const redirect = new URLSearchParams(location.search).get('redirect') || '/';
+
   useEffect(() => {
+    console.log("User Info in Redux:", userInfo);
     if (userInfo) {
-      navigate('/');
+      navigate(redirect); // Redirect to the desired path after login
     }
-  }, [navigate, userInfo]);
+  }, [navigate, userInfo, redirect]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const res = await login({ email, password }).unwrap();
-      dispatch(setCredentials({ ...res }));
-      navigate('/');
+  
+      // Log the response to check its structure
+      console.log("Login Response:", res);
+  
+      // Dispatch the response to the Redux store and confirm its structure
+      dispatch(setCredentials({ ...res, isAdmin: res.isAdmin || false }));
+      console.log("Dispatched Credentials:", { ...res, isAdmin: res.isAdmin || false });
+  
+      // Check if the `isAdmin` value in `res` is being read correctly
+      if (res.isAdmin) {
+        navigate('/admin/orderlist');
+      } else {
+        navigate(redirect);
+      }
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
   };
-
+  
   return (
     <FormContainer>
       <h1>Sign In</h1>

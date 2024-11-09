@@ -20,10 +20,10 @@ const HomeScreen = () => {
   return (
     <>
       {!keyword ? (
-        <ProductCarousel />
+        <ProductCarousel /> 
       ) : (
         <Link to="/" className="btn btn-light my-3">
-          Go Back
+          Go Back  
         </Link>
       )}
       {isLoading ? (
@@ -35,7 +35,7 @@ const HomeScreen = () => {
       ) : (
         <>
           <Meta />
-          <h1>Latest Products</h1>
+          <h1>Trending Products</h1>
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
