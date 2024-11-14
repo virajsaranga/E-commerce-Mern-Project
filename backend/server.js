@@ -18,7 +18,7 @@ connectDB();
 //initialize express
 const app = express();
 
-//body parser middleware to access the body data
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -36,8 +36,7 @@ const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 if (process.env.NODE_ENV === "production") {
-  // const __dirname = path.resolve();
-  // app.use("/uploads", express.static("/var/data/uploads"));
+  
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
   app.get("*", (req, res) =>
