@@ -23,9 +23,7 @@
 //   }
 // });
 
-// // @desc    Register a new user
-// // @route   POST /api/users
-// // @access  Public
+
 // const registerUser = asyncHandler(async (req, res) => {
 //   const { name, email, password } = req.body;
 
