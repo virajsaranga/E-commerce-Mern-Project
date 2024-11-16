@@ -54,9 +54,7 @@
 //   }
 // });
 
-// // @desc    Logout user / clear cookie
-// // @route   POST /api/users/logout
-// // @access  Public
+
 // const logoutUser = (req, res) => {
 //   res.cookie('jwt', '', {
 //     httpOnly: true,
